@@ -337,7 +337,9 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then((data) => {
                 const listaDePokemon = data.pokemon.map((p) => p.pokemon); // Obtenemos la lista de Pokémon de ese tipo
-                mostrarSugerencias(listaDePokemon);
+                sugerencias = listaDePokemon; // Actualizar el array global 
+                mostrarSugerencias(sugerencias);
+                pokemonIndex = -1;
             })
             .catch((error) => {
                 console.error(error);
