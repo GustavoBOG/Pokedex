@@ -27,14 +27,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Evento click del botón de búsqueda
+    const modal = document.getElementById("pokemonModal");
+
     btnBuscar.addEventListener("click", () => {
         const nombrePokemon = inputPokemon.value.trim().toLowerCase();
+        
         if (nombrePokemon) {
             buscarPokemon(nombrePokemon);
         } else {
-            alert("Por favor, introduce el nombre o número de un Pokémon.");
+            modal.style.display = "block";
         }
     });
+
+    // Cerrar el modal cuando se haga clic fuera del contenido del modal
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
 
     //evento para buscar con la tecla enter
     inputPokemon.addEventListener("keydown", (event) => {
