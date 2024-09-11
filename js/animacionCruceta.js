@@ -1,57 +1,26 @@
 export function animacionCruceta(direccion, urlImagen) {
-    // Al hacer clic en el botón, cambiamos a imagen con perspectiva
-    function animarCruceta(direccion, urlImagen) {
-        // Funcionamiento en PC
-        document
-            .getElementById(`btn${direccion}`)
-            .addEventListener("mousedown", function () {
-                /* Disminuir el tamaño a la imagen seleccionada */
-                function animarImg(idImagen) {
-                    document.getElementById(idImagen).src = urlImagen;
-                }
-                animarImg("imgCruceta");
-            });
-        // Funcionamiento en movil
-        document
-            .getElementById(`btn${direccion}`)
-            .addEventListener("touchstart", function () {
-                /* Disminuir el tamaño a la imagen seleccionada */
-                function animarImg(idImagen) {
-                    document.getElementById(idImagen).src = urlImagen;
-                }
-                animarImg("imgCruceta");
-            });
+    // Función para cambiar la imagen de la cruceta
+    function cambiarImagen(idImagen, nuevaUrl) {
+        document.getElementById(idImagen).src = nuevaUrl;
     }
 
-    // Al soltar el clic, volvemos al tamaño original
-    function desAnimarCruceta(btn, idImagen, urlImagen) {
-        // Funcionamiento en PC
-        document
-            .getElementById(`btn${direccion}`)
-            .addEventListener("mouseup", function () {
-                /* Disminuir el tamaño a la imagen seleccionada */
-                function animarImg(idImagen) {
-                    document.getElementById(idImagen).src =
-                        "./css/img/crucetaNormal.png";
-                }
-                animarImg("imgCruceta");
-            });
-        // Funcionamiento en movil
-        document
-            .getElementById(`btn${direccion}`)
-            .addEventListener("touchend", function () {
-                /* Disminuir el tamaño a la imagen seleccionada */
-                function animarImg(idImagen) {
-                    document.getElementById(idImagen).src = urlImagen;
-                }
-                animarImg("imgCruceta");
-            });
+    // Función que añade los eventos para animar la cruceta
+    function agregarEventos(direccion, urlImagen) {
+        const boton = document.getElementById(`btn${direccion}`);
+
+        // Funcionamiento en PC y móvil
+        boton.addEventListener("mousedown", () => cambiarImagen("imgCruceta", urlImagen));
+        boton.addEventListener("touchstart", () => cambiarImagen("imgCruceta", urlImagen));
+
+        boton.addEventListener("mouseup", () => cambiarImagen("imgCruceta", "./css/img/crucetaNormal.png"));
+        boton.addEventListener("touchend", () => cambiarImagen("imgCruceta", "./css/img/crucetaNormal.png"));
     }
 
-    animarCruceta(direccion, urlImagen);
-    desAnimarCruceta(direccion, urlImagen);
+    // Llamar a la función que agrega los eventos
+    agregarEventos(direccion, urlImagen);
 }
 
+// Llamadas a la función para cada dirección
 animacionCruceta("Arriba", "./css/img/flechaArriba.png");
 animacionCruceta("Abajo", "./css/img/flechaAbajo.png");
 animacionCruceta("Derecha", "./css/img/flechaDerecha.png");
