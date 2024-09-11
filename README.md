@@ -6,7 +6,7 @@ Link a la web= https://poke-evo-lution.vercel.app/
 
 ## Feedback marronero
 
-HTML:
+`HTML:`
 
 ● Dentro de 'main' habría puesto un 'menu' con 4 'li' y en cada uno el botón de ayuda, el de tema, el de musica y la pokeball.
 
@@ -18,7 +18,7 @@ HTML:
 
 ● A los botones les sobra el type="submit".
 
-CSS:
+`CSS:`
 
 ● No tiene sentido posicionar todo con 'position: absolute'
 
@@ -28,7 +28,7 @@ CSS:
 
 ● Fijaros que al ir a pantalla pequeña los botones redondos se deforman
 
-JavaScript:
+`JavaScript:`
 
 ● Los botones de la cruceta de arriba y abajo no funcionan cuando le doy para ver todos los pokemons de un tipo si no escribi nada antes en el 'input'
 
