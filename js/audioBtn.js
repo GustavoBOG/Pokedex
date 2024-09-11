@@ -7,7 +7,6 @@ function asignarAudioBtn(rutaBtn) {
         audio.play();
     });
 }
-
 asignarAudioBtn("btnBuscar");
 asignarAudioBtn("btnEliminar");
 asignarAudioBtn("btnDerecha");

@@ -1,4 +1,4 @@
-function animacionCruceta(direccion, urlImagen) {
+export function animacionCruceta(direccion, urlImagen) {
     // Al hacer clic en el botón, cambiamos a imagen con perspectiva
     function animarCruceta(direccion, urlImagen) {
         // Funcionamiento en PC
