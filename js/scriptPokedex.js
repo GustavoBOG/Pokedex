@@ -45,16 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "none";
     }
   };
-  // Evento click del botón de búsqueda
-  btnBuscar.addEventListener("click", () => {
-    const nombrePokemon = inputPokemon.value.trim().toLowerCase();
-    if (nombrePokemon) {
-      buscarPokemon(nombrePokemon);
-    } else {
-      alert("Por favor, introduce el nombre o número de un Pokémon.");
-    }
-  });
-
+ 
   //evento para buscar con la tecla enter
   inputPokemon.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
